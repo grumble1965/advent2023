@@ -21,12 +21,20 @@ class Day01(Advent):
     def part_one(self):
         calibration = 0
         for line in self.line:
-            digits = []
-            for ch in line:
-                if ch in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']:
-                    digits.append(ord(ch) - ord('0'))
-            first_digit = digits[0]
-            last_digit = digits[-1]
+            idx = 0
+            while idx < len(line):
+                if line[idx].isdigit():
+                    first_digit = ord(line[idx]) - ord('0')
+                    break
+                idx += 1
+
+            idx = len(line) - 1
+            while idx >= 0:
+                if line[idx].isdigit():
+                    last_digit = ord(line[idx]) - ord('0')
+                    break
+                idx -= 1
+
             calibration += (first_digit * 10) + last_digit
         print(f"Calibration total = {calibration}")
         return calibration

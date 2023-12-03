@@ -3,6 +3,7 @@
 import unittest
 from day01 import Day01
 from day02 import Day02
+from day03 import Day03
 
 
 class Day01Tests(unittest.TestCase):
@@ -53,7 +54,45 @@ class Day02Tests(unittest.TestCase):
                      'Game 4: 1 green, 3 red, 6 blue; 3 green, 6 red; 3 green, 15 blue, 14 red',
                      'Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green'])
         day.parse()
-        self.assertEqual(281, day.part_two())
+        self.assertEqual(2286, day.part_two())
+
+
+class Day03Tests(unittest.TestCase):
+    """ day 3 tests """
+
+    def test_part_one(self):
+        """ part one """
+        day = Day03([
+            '467..114..',
+            '...*......',
+            '..35..633.',
+            '......#...',
+            '617*......',
+            '.....+.58.',
+            '..592.....',
+            '......755.',
+            '...$.*....',
+            '.664.598..'
+        ])
+        day.parse()
+        self.assertEqual(4361, day.part_one())
+
+    def test_part_two(self):
+        """ part two """
+        day = Day03([
+            '467..114..',
+            '...*......',
+            '..35..633.',
+            '......#...',
+            '617*......',
+            '.....+.58.',
+            '..592.....',
+            '......755.',
+            '...$.*....',
+            '.664.598..'
+        ])
+        day.parse()
+        self.assertEqual(467835, day.part_two())
 
 
 if __name__ == '__main__':

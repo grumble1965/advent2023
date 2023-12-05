@@ -1,10 +1,12 @@
 """ Code to unit test Advent of Code 2015 solutions """
 
 import unittest
+from advent import file_to_string
 from day01 import Day01
 from day02 import Day02
 from day03 import Day03
 from day04 import Day04
+from day05 import Day05
 
 class Day01Tests(unittest.TestCase):
     """ day 1 tests """
@@ -120,6 +122,23 @@ class Day04Tests(unittest.TestCase):
             'Card 6: 31 18 13 56 72 | 74 77 10 23 35 67 36 11])'])
         day.parse()
         self.assertEqual(30, day.part_two())
+
+class Day05Tests(unittest.TestCase):
+    """ day 5 tests """
+
+    def test_part_one(self):
+        """ part one """
+        input_text = file_to_string("data\\day05-test.txt")
+        day = Day05(input_text)
+        day.parse()
+        self.assertEqual(35, day.part_one())
+
+    def test_part_two(self):
+        """ part two """
+        input_text = file_to_string("data\\day05-test.txt")
+        day = Day05(input_text)
+        day.parse()
+        self.assertEqual(46, day.part_two())
 
 if __name__ == '__main__':
     unittest.main()

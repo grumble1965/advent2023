@@ -14,7 +14,7 @@ def main():
     Runner(Day02(file_to_string("data\\day02.txt"))).run()
     Runner(Day03(file_to_string("data\\day03.txt"))).run()
     Runner(Day04(file_to_string("data\\day04.txt"))).run()
-    Runner(Day05(file_to_string("data\\day04.txt"))).run()
+    Runner(Day05(file_to_string("data\\day05.txt"))).run()
 
 
 if __name__ == '__main__':

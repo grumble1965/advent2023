@@ -7,6 +7,9 @@ from day02 import Day02
 from day03 import Day03
 from day04 import Day04
 from day05 import Day05
+from day06 import Day06
+from day07 import Day07
+
 
 class Day01Tests(unittest.TestCase):
     """ day 1 tests """
@@ -96,6 +99,7 @@ class Day03Tests(unittest.TestCase):
         day.parse()
         self.assertEqual(467835, day.part_two())
 
+
 class Day04Tests(unittest.TestCase):
     """ day 4 tests """
 
@@ -123,6 +127,7 @@ class Day04Tests(unittest.TestCase):
         day.parse()
         self.assertEqual(30, day.part_two())
 
+
 class Day05Tests(unittest.TestCase):
     """ day 5 tests """
 
@@ -139,6 +144,53 @@ class Day05Tests(unittest.TestCase):
         day = Day05(input_text)
         day.parse()
         self.assertEqual(46, day.part_two())
+
+
+class Day06Tests(unittest.TestCase):
+    """ day 6 tests """
+
+    def test_part_one(self):
+        """ part one """
+        input_text = ['Time:      7  15   30',
+                      'Distance:  9  40  200']
+        day = Day06(input_text)
+        day.parse()
+        self.assertEqual(288, day.part_one())
+
+    def test_part_two(self):
+        """ part two """
+        input_text = ['Time:      7  15   30',
+                      'Distance:  9  40  200']
+        day = Day06(input_text)
+        day.parse()
+        self.assertEqual(71503, day.part_two())
+
+
+class Day07Tests(unittest.TestCase):
+    """ day 1 tests """
+
+    def test_part_one(self):
+        """ part one """
+        day = Day07([
+            '32T3K 765',
+            'T55J5 684',
+            'KK677 28',
+            'KTJJT 220',
+            'QQQJA 483'])
+        day.parse()
+        self.assertEqual(6440, day.part_one())
+
+    def test_part_two(self):
+        """ part two """
+        day = Day07([
+            '32T3K 765',
+            'T55J5 684',
+            'KK677 28',
+            'KTJJT 220',
+            'QQQJA 483'])
+        day.parse()
+        self.assertEqual(5905, day.part_two())
+
 
 if __name__ == '__main__':
     unittest.main()

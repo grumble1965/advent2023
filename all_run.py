@@ -8,6 +8,7 @@ from day04 import Day04
 from day05 import Day05
 from day06 import Day06
 from day07 import Day07
+from day08 import Day08
 
 
 def main():
@@ -19,6 +20,7 @@ def main():
     Runner(Day05(file_to_string("data\\day05.txt"))).run()
     Runner(Day06(file_to_string("data\\day06.txt"))).run()
     Runner(Day07(file_to_string("data\\day07.txt"))).run()
+    Runner(Day08(file_to_string("data\\day08.txt"))).run()
 
 
 if __name__ == '__main__':

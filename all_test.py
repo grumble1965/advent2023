@@ -9,6 +9,7 @@ from day04 import Day04
 from day05 import Day05
 from day06 import Day06
 from day07 import Day07
+from day08 import Day08
 
 
 class Day01Tests(unittest.TestCase):
@@ -33,7 +34,7 @@ class Day01Tests(unittest.TestCase):
             'xtwone3four',
             '4nineeightseven2',
             'zoneight234',
-            '7pqrstsixteen',])
+            '7pqrstsixteen', ])
         day.parse()
         self.assertEqual(281, day.part_two())
 
@@ -190,6 +191,57 @@ class Day07Tests(unittest.TestCase):
             'QQQJA 483'])
         day.parse()
         self.assertEqual(5905, day.part_two())
+
+
+class Day08Tests(unittest.TestCase):
+    """ day 8 tests """
+
+    def test_part_one(self):
+        input_one = ['RL',
+                     '',
+                     'AAA = (BBB, CCC)',
+                     'BBB = (DDD, EEE)',
+                     'CCC = (ZZZ, GGG)',
+                     'DDD = (DDD, DDD)',
+                     'EEE = (EEE, EEE)',
+                     'GGG = (GGG, GGG)',
+                     'ZZZ = (ZZZ, ZZZ)']
+
+        input_two = [
+            'LLR',
+            '',
+            'AAA = (BBB, BBB)',
+            'BBB = (AAA, ZZZ)',
+            'ZZZ = (ZZZ, ZZZ)'
+        ]
+
+        """ part one """
+        day = Day08(input_one)
+        day.parse()
+        self.assertEqual(2, day.part_one())
+
+        day = Day08(input_two)
+        day.parse()
+        self.assertEqual(6, day.part_one())
+
+    def test_part_two(self):
+        """ part two """
+        input_three = [
+            'LR',
+            '',
+            '11A = (11B, XXX)',
+            '11B = (XXX, 11Z)',
+            '11Z = (11B, XXX)',
+            '22A = (22B, XXX)',
+            '22B = (22C, 22C)',
+            '22C = (22Z, 22Z)',
+            '22Z = (22B, 22B)',
+            'XXX = (XXX, XXX)'
+        ]
+
+        day = Day08(input_three)
+        day.parse()
+        self.assertEqual(6, day.part_two())
 
 
 if __name__ == '__main__':

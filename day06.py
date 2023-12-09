@@ -1,4 +1,5 @@
 """ Day 06 setup """
+import math
 
 from advent import Advent, Runner, file_to_string
 
@@ -29,45 +30,51 @@ class Day06(Advent):
 
         if len(times) == len(records):
             for i in range(len(times)):
-                self.races.append( (times[i], records[i]) )
+                self.races.append((times[i], records[i]))
         else:
             raise Exception("mismatched input lists")
-
 
     def part_one(self):
         product = 1
         for t_max, d_min in self.races:
-            wins = 0
-            for button_time in range(t_max + 1):
-                speed = button_time
-                coast = t_max - button_time
-                distance = coast * speed
-                # print(f"Button down {button_time}:  Speed = {speed}  Distance = {distance}  Record = {d_min}")
-                if distance > d_min:
-                    # print("win!")
-                    wins += 1
-            # print(f"race {t_max}/{d_min}: wins = {wins}")
+            wins = self.calculate_wins(d_min, t_max)
             product *= wins
         print(f"Product of total wins = {product}")
         return product
 
     def part_two(self):
-        wins = 0
         time_str, dist_str = "", ""
-        for t_max, d_min in self.races:
-            time_str += f"{t_max}"
-            dist_str += f"{d_min}"
-        t_max, d_min = int(time_str), int(dist_str)
-        for button_time in range(t_max + 1):
-            speed = button_time
-            coast = t_max - button_time
-            distance = coast * speed
-            # print(f"Button down {button_time}:  Speed = {speed}  Distance = {distance}  Record = {d_min}")
-            if distance > d_min:
-                # print("win!")
-                wins += 1
+        for race_time, race_distance in self.races:
+            time_str += f"{race_time}"
+            dist_str += f"{race_distance}"
+        race_time, race_distance = int(time_str), int(dist_str)
+
+        wins = self.calculate_wins(race_distance, race_time)
         print(f"Total wins = {wins}")
         return wins
+
+    def calculate_wins(self, race_distance, race_time):
+        """ closed form determination of number of wins for a race """
+        # distance = (race_time - button_time) * button_time
+        # distance = -button^2 + race_time*button
+        # distance - race_distance = -button^2 + race_time*button - race_distance
+        # y = distance - race_distance
+        # x = button
+        # y = -x^2 + race_time*x -race_distance
+        # y = ax^2 + bx + c
+        # y = ( -race_time +/- sqrt(race_time^2 - 4 * (-1) * (-race_distance) ) / (2 * -1)
+
+        a = -1
+        b = race_time
+        c = -race_distance
+        deter = math.sqrt(b * b - (4.0 * a * c))
+        first = math.ceil((-b + deter) / (2 * a))
+        second = math.floor((-b - deter) / (2 * a))
+        if first * (b - first) == race_distance:
+            first += 1
+        if second * (b - second) == race_distance:
+            second -= 1
+        return second - first + 1
 
 
 def main():

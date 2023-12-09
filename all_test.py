@@ -10,6 +10,7 @@ from day05 import Day05
 from day06 import Day06
 from day07 import Day07
 from day08 import Day08
+from day09 import Day09
 
 
 class Day01Tests(unittest.TestCase):
@@ -242,6 +243,28 @@ class Day08Tests(unittest.TestCase):
         day = Day08(input_three)
         day.parse()
         self.assertEqual(6, day.part_two())
+
+
+class Day09Tests(unittest.TestCase):
+    """ day 1 tests """
+
+    def test_part_one(self):
+        """ part one """
+        day = Day09([
+            '0 3 6 9 12 15',
+            '1 3 6 10 15 21',
+            '10 13 16 21 30 45'])
+        day.parse()
+        self.assertEqual(114, day.part_one())
+
+    def test_part_two(self):
+        """ part two """
+        day = Day09([
+            '0 3 6 9 12 15',
+            '1 3 6 10 15 21',
+            '10 13 16 21 30 45'])
+        day.parse()
+        self.assertEqual(2, day.part_two())
 
 
 if __name__ == '__main__':

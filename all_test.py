@@ -12,6 +12,7 @@ from day07 import Day07
 from day08 import Day08
 from day09 import Day09
 from day10 import Day10
+from day11 import Day11
 
 
 class Day01Tests(unittest.TestCase):
@@ -335,6 +336,44 @@ class Day10Tests(unittest.TestCase):
         day.part_one()
         self.assertEqual(10, day.part_two())
 
+class Day11Tests(unittest.TestCase):
+    """ day 1 tests """
+
+    def test_part_one(self):
+        """ part one """
+        day = Day11([
+            '...#......',
+            '.......#..',
+            '#.........',
+            '..........',
+            '......#...',
+            '.#........',
+            '.........#',
+            '..........',
+            '.......#..',
+            '#...#.....'])
+        day.parse()
+        self.assertEqual(374, day.part_one())
+
+    def test_part_two(self):
+        """ part two """
+        day = Day11([
+            '...#......',
+            '.......#..',
+            '#.........',
+            '..........',
+            '......#...',
+            '.#........',
+            '.........#',
+            '..........',
+            '.......#..',
+            '#...#.....'])
+        day.parse()
+        day.factor = 10
+        self.assertEqual(1030, day.part_two())
+
+        day.factor = 100
+        self.assertEqual(8410, day.part_two())
 
 if __name__ == '__main__':
     unittest.main()

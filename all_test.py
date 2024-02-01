@@ -13,6 +13,8 @@ from day08 import Day08
 from day09 import Day09
 from day10 import Day10
 from day11 import Day11
+from day12 import Day12
+from day13 import Day13
 
 
 class Day01Tests(unittest.TestCase):
@@ -336,6 +338,7 @@ class Day10Tests(unittest.TestCase):
         day.part_one()
         self.assertEqual(10, day.part_two())
 
+
 class Day11Tests(unittest.TestCase):
     """ day 1 tests """
 
@@ -374,6 +377,106 @@ class Day11Tests(unittest.TestCase):
 
         day.factor = 100
         self.assertEqual(8410, day.part_two())
+
+
+class Day12Tests(unittest.TestCase):
+    """ day 12 tests """
+
+    def test_part_one(self):
+        """ part one """
+        day = Day12([
+            '???.### 1,1,3',
+            '.??..??...?##. 1,1,3',
+            '?#?#?#?#?#?#?#? 1,3,1,6',
+            '????.#...#... 4,1,1',
+            '????.######..#####. 1,6,5',
+            '?###???????? 3,2,1'])
+        day.parse()
+        self.assertEqual(21, day.part_one())
+
+    def test_part_two(self):
+        """ part two """
+        day = Day12([
+            '???.### 1,1,3',
+            '.??..??...?##. 1,1,3',
+            '?#?#?#?#?#?#?#? 1,3,1,6',
+            '????.#...#... 4,1,1',
+            '????.######..#####. 1,6,5',
+            '?###???????? 3,2,1'])
+        day.parse()
+        self.assertEqual(525152, day.part_two())
+
+class Day13Tests(unittest.TestCase):
+    """ day 1 tests """
+
+    def test_part_one(self):
+        """ part one """
+        day = Day13([
+            '#.##..##.',
+            '..#.##.#.',
+            '##......#',
+            '##......#',
+            '..#.##.#.',
+            '..##..##.',
+            '#.#.##.#.',
+            '',
+            '#...##..#',
+            '#....#..#',
+            '..##..###',
+            '#####.##.',
+            '#####.##.',
+            '..##..###',
+            '#....#..#'])
+        day.parse()
+        self.assertEqual(2, len(day.grids))
+
+        self.assertEqual( 5, day.find_reflections(day.grids[0].cols))
+        self.assertEqual( None, day.find_reflections(day.grids[0].rows))
+        self.assertEqual( None, day.find_reflections(day.grids[1].cols))
+        self.assertEqual( 4, day.find_reflections(day.grids[1].rows))
+        self.assertEqual(405, day.part_one())
+
+    def test_part_two(self):
+        """ part two """
+        day = Day13([
+            '#.##..##.',
+            '..#.##.#.',
+            '##......#',
+            '##......#',
+            '..#.##.#.',
+            '..##..##.',
+            '#.#.##.#.',
+            '',
+            '#...##..#',
+            '#....#..#',
+            '..##..###',
+            '#####.##.',
+            '#####.##.',
+            '..##..###',
+            '#....#..#'])
+        day.parse()
+
+        self.assertEqual( None, day.find_smudged_reflections(day.grids[0].cols))
+        self.assertEqual( 3, day.find_smudged_reflections(day.grids[0].rows))
+        self.assertEqual( None, day.find_smudged_reflections(day.grids[1].cols))
+        self.assertEqual( 1, day.find_smudged_reflections(day.grids[1].rows))
+        self.assertEqual(400, day.part_two())
+
+class DayXXTests(unittest.TestCase):
+    """ day 1 tests """
+
+    def test_part_one(self):
+        """ part one """
+        day = Day01([])
+        day.parse()
+        # self.assertEqual(-999, day.part_one())
+
+    def test_part_two(self):
+        """ part two """
+        day = Day01([])
+        day.parse()
+        # self.assertEqual(-999, day.part_two())
+
 
 if __name__ == '__main__':
     unittest.main()

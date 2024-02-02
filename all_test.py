@@ -16,6 +16,7 @@ from day11 import Day11
 from day12 import Day12
 from day13 import Day13
 from day14 import Day14
+from day15 import Day15
 
 class Day01Tests(unittest.TestCase):
     """ day 1 tests """
@@ -496,6 +497,23 @@ class Day14Tests(unittest.TestCase):
             '#OO..#....'])
         day.parse()
         self.assertEqual(64, day.part_two())
+
+class Day15Tests(unittest.TestCase):
+    """ day 15 tests """
+
+    def test_part_one(self):
+        """ part one """
+        self.assertEqual(52, Day15.hash_alg('HASH'))
+
+        day = Day15(['rn=1,cm-,qp=3,cm=2,qp-,pc=4,ot=9,ab=5,pc-,pc=6,ot=7'])
+        day.parse()
+        self.assertEqual(1320, day.part_one())
+
+    def test_part_two(self):
+        """ part two """
+        day = Day15(['rn=1,cm-,qp=3,cm=2,qp-,pc=4,ot=9,ab=5,pc-,pc=6,ot=7'])
+        day.parse()
+        self.assertEqual(145, day.part_two())
 
 
 class DayXXTests(unittest.TestCase):

@@ -15,7 +15,7 @@ from day10 import Day10
 from day11 import Day11
 from day12 import Day12
 from day13 import Day13
-
+from day14 import Day14
 
 class Day01Tests(unittest.TestCase):
     """ day 1 tests """
@@ -462,8 +462,44 @@ class Day13Tests(unittest.TestCase):
         self.assertEqual( 1, day.find_smudged_reflections(day.grids[1].rows))
         self.assertEqual(400, day.part_two())
 
+class Day14Tests(unittest.TestCase):
+    """ day 14 tests """
+
+    def test_part_one(self):
+        """ part one """
+        day = Day14([
+            'O....#....',
+            'O.OO#....#',
+            '.....##...',
+            'OO.#O....O',
+            '.O.....O#.',
+            'O.#..O.#.#',
+            '..O..#O..O',
+            '.......O..',
+            '#....###..',
+            '#OO..#....'])
+        day.parse()
+        self.assertEqual(136, day.part_one())
+
+    def test_part_two(self):
+        """ part two """
+        day = Day14([
+            'O....#....',
+            'O.OO#....#',
+            '.....##...',
+            'OO.#O....O',
+            '.O.....O#.',
+            'O.#..O.#.#',
+            '..O..#O..O',
+            '.......O..',
+            '#....###..',
+            '#OO..#....'])
+        day.parse()
+        self.assertEqual(64, day.part_two())
+
+
 class DayXXTests(unittest.TestCase):
-    """ day 1 tests """
+    """ day XX tests """
 
     def test_part_one(self):
         """ part one """

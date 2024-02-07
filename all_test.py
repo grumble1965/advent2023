@@ -17,6 +17,15 @@ from day12 import Day12
 from day13 import Day13
 from day14 import Day14
 from day15 import Day15
+from day16 import Day16
+from day17 import Day17
+from day18 import Day18
+from day19 import Day19
+from day20 import Day20
+from day21 import Day21
+from day22 import Day22
+from day23 import Day23
+from day24 import Day24
 
 class Day01Tests(unittest.TestCase):
     """ day 1 tests """
@@ -515,6 +524,158 @@ class Day15Tests(unittest.TestCase):
         day.parse()
         self.assertEqual(145, day.part_two())
 
+class Day16Tests(unittest.TestCase):
+    """ day 16 tests """
+
+    def test_part_one(self):
+        """ part one """
+        day = Day16(['.|...\....',
+                     '|.-.\.....',
+                     '.....|-...',
+                     '........|.',
+                     '..........',
+                     '.........\\',
+                     '..../.\\\\..',
+                     '.-.-/..|..',
+                     '.|....-|.\\',
+                     '..//.|....'])
+        day.parse()
+        self.assertEqual(46, day.part_one())
+
+    def test_part_two(self):
+        """ part two """
+        day = Day16(['.|...\....',
+                     '|.-.\.....',
+                     '.....|-...',
+                     '........|.',
+                     '..........',
+                     '.........\\',
+                     '..../.\\\\..',
+                     '.-.-/..|..',
+                     '.|....-|.\\',
+                     '..//.|....'])
+        day.parse()
+        self.assertEqual(51, day.part_two())
+
+class Day17Tests(unittest.TestCase):
+    """ day 17 tests """
+
+    def test_part_one(self):
+        """ part one """
+        day = Day17([])
+        day.parse()
+        # self.assertEqual(-999, day.part_one())
+
+    def test_part_two(self):
+        """ part two """
+        day = Day17([])
+        day.parse()
+        # self.assertEqual(-999, day.part_two())
+
+class Day18Tests(unittest.TestCase):
+    """ day 18 tests """
+
+    def test_part_one(self):
+        """ part one """
+        day = Day18([])
+        day.parse()
+        # self.assertEqual(-999, day.part_one())
+
+    def test_part_two(self):
+        """ part two """
+        day = Day18([])
+        day.parse()
+        # self.assertEqual(-999, day.part_two())
+
+class Day19Tests(unittest.TestCase):
+    """ day 19 tests """
+
+    def test_part_one(self):
+        """ part one """
+        day = Day19([])
+        day.parse()
+        # self.assertEqual(-999, day.part_one())
+
+    def test_part_two(self):
+        """ part two """
+        day = Day19([])
+        day.parse()
+        # self.assertEqual(-999, day.part_two())
+
+class Day20Tests(unittest.TestCase):
+    """ day 20 tests """
+
+    def test_part_one(self):
+        """ part one """
+        day = Day20([])
+        day.parse()
+        # self.assertEqual(-999, day.part_one())
+
+    def test_part_two(self):
+        """ part two """
+        day = Day20([])
+        day.parse()
+        # self.assertEqual(-999, day.part_two())
+
+class Day21Tests(unittest.TestCase):
+    """ day 21 tests """
+
+    def test_part_one(self):
+        """ part one """
+        day = Day21([])
+        day.parse()
+        # self.assertEqual(-999, day.part_one())
+
+    def test_part_two(self):
+        """ part two """
+        day = Day21([])
+        day.parse()
+        # self.assertEqual(-999, day.part_two())
+
+class Day22Tests(unittest.TestCase):
+    """ day 22 tests """
+
+    def test_part_one(self):
+        """ part one """
+        day = Day22([])
+        day.parse()
+        # self.assertEqual(-999, day.part_one())
+
+    def test_part_two(self):
+        """ part two """
+        day = Day22([])
+        day.parse()
+        # self.assertEqual(-999, day.part_two())
+
+class Day23Tests(unittest.TestCase):
+    """ day 23 tests """
+
+    def test_part_one(self):
+        """ part one """
+        day = Day23([])
+        day.parse()
+        # self.assertEqual(-999, day.part_one())
+
+    def test_part_two(self):
+        """ part two """
+        day = Day23([])
+        day.parse()
+        # self.assertEqual(-999, day.part_two())
+
+class Day24Tests(unittest.TestCase):
+    """ day 24 tests """
+
+    def test_part_one(self):
+        """ part one """
+        day = Day24([])
+        day.parse()
+        # self.assertEqual(-999, day.part_one())
+
+    def test_part_two(self):
+        """ part two """
+        day = Day24([])
+        day.parse()
+        # self.assertEqual(-999, day.part_two())
 
 class DayXXTests(unittest.TestCase):
     """ day XX tests """

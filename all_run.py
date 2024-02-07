@@ -14,6 +14,8 @@ from day10 import Day10
 from day11 import Day11
 from day12 import Day12
 from day13 import Day13
+from day14 import Day14
+from day15 import Day15
 
 
 def main():
@@ -31,6 +33,8 @@ def main():
     Runner(Day11(file_to_string("data\\day11.txt"))).run()
     Runner(Day12(file_to_string("data\\day12.txt"))).run()
     Runner(Day13(file_to_string("data\\day13.txt"))).run()
+    Runner(Day14(file_to_string("data\\day14.txt"))).run()
+    Runner(Day15(file_to_string("data\\day15.txt"))).run()
 
 
 if __name__ == '__main__':
